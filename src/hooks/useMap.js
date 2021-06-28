@@ -157,6 +157,15 @@ const useMap = () => {
                         kakao.maps.event.addListener(map, 'click', function () {
                             infowindow.close();
                         });
+
+                        kakao.maps.event.addListener(
+                            map,
+                            'click',
+                            function (mouseEvent) {
+                                var latlng = mouseEvent.latLng;
+                                console.log(latlng.toString());
+                            }
+                        );
                     });
                 });
             } else {
